@@ -12,8 +12,11 @@ a tool for adjust Dell Server fans speed
 
 ## V1.1.0（显卡温度自动控速版）
 
-- 程序文件：[release/dell_fans_controller_v1.1.0.exe](https://github.com/www902/dell_fans_controller/raw/master/release/dell_fans_controller_v1.1.0.exe)
-  （直接下载 exe，放到已经有 `ipmitool.exe` 的目录里运行即可）
+- **免安装包（推荐，2.6 MB）**：[Dell_Fans_Controller_v1.1.0_full.zip](https://github.com/www902/dell_fans_controller/releases/download/v1.1.0/Dell_Fans_Controller_v1.1.0_full.zip)
+  解压后同一个文件夹里已经有 `dell_fans_controller.exe`、`ipmitool.exe` 和 4 个 cygwin dll，双击 exe 就能打开；再按里面的 `guide_v1.1.0.txt` 填 iDRAC 的 IP / 用户名 / 密码。
+- Release 页面（含上面这个压缩包和单独的 exe）：https://github.com/www902/dell_fans_controller/releases/tag/v1.1.0
+- 只要主程序：[dell_fans_controller_v1.1.0.exe](https://github.com/www902/dell_fans_controller/releases/download/v1.1.0/dell_fans_controller_v1.1.0.exe)
+  （需要自己把 `ipmitool.exe` 及它的 cygwin dll 放在同一个目录，本仓库 `dell_fans_controller/Dell/SysMgt/bmc/` 下有）
 - 想自己编译：仓库根目录执行 `build.cmd`，或用 Visual Studio 打开 `dell_fans_controller/dell_fans_controller.sln`
 - 用法全部写在下面，重点只看一句：**打开程序 → 勾选「启用显卡温控」**
 
