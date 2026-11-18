@@ -348,3 +348,19 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# ---- v1.1.0 : build output and local runtime files ----
+dell_fans_controller.exe
+tools/mkres.exe
+dell_fans_controller/dell_fans_controller/FormMain.resources
+
+# local config contains the iDRAC password in plain text - never commit it
+config.ini
+
+# runtime log of the GPU auto fan control
+gpu_control.log
+*.log
+
+# keep the published binary folder (the VS template above ignores [Rr]elease/)
+!release/
+!release/*.exe

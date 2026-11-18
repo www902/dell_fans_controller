@@ -1,0 +1,29 @@
+dell_fans_controller v1.1.0 (GPU Auto Control)
+Copyright 2026 www902
+
+This product includes software developed at:
+  - dell_fans_controller by cw1997 (https://github.com/cw1997/dell_fans_controller),
+    the original code base of this repository, Apache License 2.0.
+  - DellEmcFansController by zzccchen (https://github.com/zzccchen/DellEmcFansController),
+    v1.0.2, from which the updated main-window sources were taken, Apache License 2.0.
+
+Modifications made in version 1.1.0 (this repository):
+
+- dell_fans_controller/GpuProbe.cs        (new) reads GPU temperature/fan speed with nvidia-smi,
+                          maps temperature to a fan level with hysteresis,
+                          and applies fan speed through ipmitool
+                          (raw 0x30 0x30 0x01 0x00/0x01, raw 0x30 0x30 0x02 <fan> <pct>).
+- dell_fans_controller/GpuFanControl.cs   (new) "GPU Auto Control" panel in the main window:
+                          enable switch, polling interval, quiet speed, hysteresis,
+                          three temperature tiers, per-fan GPU binding (F1..F6),
+                          live temperature / applied-speed status lines,
+                          persistence in the [gpu] section of config.ini,
+                          and a change log written to gpu_control.log.
+- dell_fans_controller/FormMain.cs        hosts the panel, keeps iDRAC credentials in sync, warns when a
+                          manual fan button is pressed while auto control is active,
+                          turns auto control off on "Reset to Auto Mode",
+                          stops the worker thread on exit, adaptive window layout.
+- dell_fans_controller.csproj             target framework v2.0 -> v4.0, two new source files, dell.ico.
+- build.rsp, tools/mkres.cs, build.cmd    (new) command-line build with the .NET Framework
+                          csc.exe, no Visual Studio and no resgen.exe required.
+- config.ini.example, docs/, release/     (new) sample config, UI screenshots, built executable.

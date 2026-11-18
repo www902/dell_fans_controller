@@ -1,0 +1,31 @@
+# 复制成 config.ini 后填写自己的信息（config.ini 已被 .gitignore 忽略，不要提交密码）
+[ipmi]
+ip=192.168.1.10
+user=root
+password=changeme
+
+[gpu]
+; enabled=1 表示启动时自动开启显卡温度控速
+enabled=0
+; 读温度/调速的间隔（秒）
+interval=15
+; 安静转速（%）：所有显卡都低于一级触发点时用的转速
+base=20
+; 回差（℃）：降档需要低于「触发点 - 回差」，越大越不会来回跳
+hyst=3
+; 三级档位：触发温度 -> 转速
+t1=50
+s1=40
+t2=65
+s2=55
+t3=75
+s3=70
+; nvidia-smi 的路径，在 PATH 里就写 nvidia-smi
+smi=nvidia-smi
+; 每把风扇听哪块显卡：0=全部(取最高) 1..4=显卡1..4 5=不参与
+fan1=0
+fan2=0
+fan3=0
+fan4=0
+fan5=0
+fan6=0
